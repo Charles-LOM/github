@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion — Projet 06.02</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-connexion">
+  <main class="boite-connexion">
+    <a href="index.html">← Retour au projet</a>
+
+    <div id="formulaire">
+      <h1>Connexion</h1>
+      <p>Entre tes identifiants pour continuer.</p>
+
+      <form id="form-connexion">
+        <label for="identifiant">Identifiant</label>
+        <input id="identifiant" type="text" required>
+
+        <label for="mot-de-passe">Mot de passe</label>
+        <input id="mot-de-passe" type="password" required>
+
+        <button type="submit">Se connecter</button>
+        <p id="erreur"></p>
+      </form>
+
+      <p class="note">
+        Grades cumulés : Client, VIP, Technicien, Admin et Développeur.
+        Le Développeur a accès à tout.
+      </p>
+    </div>
+
+    <div id="espace" class="cache">
+      <h1>Bienvenue, développeur !</h1>
+      <p>Tu as accès à tous les grades et à toutes les fonctions.</p>
+      <button id="deconnexion" type="button">Se déconnecter</button>
+    </div>
+  </main>
+
+  <script src="js/connexion.js"></script>
+</body>
+</html>
