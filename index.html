@@ -3,237 +3,324 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Projet d’ingénierie : système de dosage de liquides">
-  <title>Projet 06.02 — Dosage de liquides</title>
+  <meta name="theme-color" content="#0b0b0d">
+  <title>Connexion — Projet 06.02</title>
+
   <style>
-    :root {
-      --fond: #f5f4ef;
-      --blanc: #fffefa;
-      --texte: #172b3a;
-      --secondaire: #60717a;
-      --bleu: #176b72;
-      --vert: #d7ec79;
-      --ligne: #d9dfd9;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
     body {
+      min-height: 100vh;
       margin: 0;
-      background: var(--fond);
-      color: var(--texte);
-      font-family: var(--sans);
-      line-height: 1.6;
-    }
-    a { color: inherit; }
-    .conteneur { width: min(1100px, calc(100% - 40px)); margin: auto; }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--ligne);
-    }
-    .logo { font-weight: 800; text-decoration: none; }
-    .liens { display: flex; gap: 22px; font-size: .9rem; }
-    .liens a { color: var(--secondaire); text-decoration: none; }
-    .liens a:hover { color: var(--bleu); }
-
-    .hero {
-      padding: 76px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .etiquette {
-      color: var(--bleu);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    h1 {
-      margin: 16px 0;
-      font: 500 clamp(3rem, 7vw, 5.5rem)/.98 var(--serif);
-      letter-spacing: -.05em;
-    }
-    h1 em { color: var(--bleu); font-weight: 400; }
-    .intro { max-width: 530px; color: var(--secondaire); font-size: 1.08rem; }
-    .bouton {
-      display: inline-block;
-      margin: 12px 8px 0 0;
-      padding: 12px 18px;
-      border-radius: 30px;
-      background: var(--bleu);
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .bouton.clair { border: 1px solid var(--ligne); background: transparent; color: var(--texte); }
-    .illustration {
-      min-height: 330px;
       display: grid;
       place-items: center;
-      border-radius: 26px;
-      background: #dce9df;
-      color: var(--bleu);
-      font-size: 6rem;
-    }
-    .illustration span { font-size: 1rem; }
-
-    section { padding: 65px 0; border-top: 1px solid var(--ligne); }
-    .titre-section {
-      max-width: 680px;
-      margin-bottom: 28px;
-      font: 500 clamp(2rem, 4vw, 3.4rem)/1.08 var(--serif);
-      letter-spacing: -.04em;
-    }
-    .texte-secondaire { color: var(--secondaire); }
-    .grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .carte {
       padding: 24px;
-      border: 1px solid var(--ligne);
-      border-radius: 18px;
-      background: var(--blanc);
+      color: #fff;
+      background:
+        radial-gradient(circle at 80% 20%, #ed1c2422, transparent 30%),
+        #0b0b0d;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    .numero { color: var(--bleu); font-size: .8rem; font-weight: 800; }
-    .carte h3 { margin: 12px 0 8px; font: 500 1.6rem var(--serif); }
-    .carte p { margin-bottom: 0; color: var(--secondaire); }
 
-    .objectif {
-      padding: 30px;
-      border-radius: 20px;
-      background: var(--bleu);
-      color: white;
-      font: 500 clamp(1.5rem, 3vw, 2.2rem)/1.35 var(--serif);
+    a { color: inherit; }
+
+    .page {
+      width: min(100%, 960px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border: 1px solid #303035;
+      border-radius: 24px;
+      background: #141416;
+      box-shadow: 0 24px 80px #0009;
     }
-    .equipe { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; }
-    .membre { padding: 13px 0; border-bottom: 1px solid var(--ligne); }
-    .membre strong { display: block; }
 
-    footer {
-      padding: 25px 0 35px;
-      color: var(--secondaire);
+    .presentation { padding: 48px; }
+
+    .retour {
+      color: #b8b8be;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+
+    .retour:hover { color: #fff; }
+
+    .badge {
+      display: inline-block;
+      margin-top: 55px;
+      padding: 7px 11px;
+      border: 1px solid #ed1c2466;
+      border-radius: 30px;
+      color: #ff6b70;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font: 500 clamp(2.4rem, 5vw, 4rem)/1 Georgia, serif;
+      letter-spacing: -.05em;
+    }
+
+    .description { color: #b8b8be; }
+
+    .grades {
+      display: grid;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .grade {
+      padding: 12px 14px;
+      border: 1px solid #303035;
+      border-radius: 12px;
+      color: #d7d7dc;
+      background: #1c1c1f;
+      font-size: .9rem;
+    }
+
+    .grade strong { color: #fff; }
+    .grade.dev { border-color: #ed1c24; }
+
+    .connexion {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #151518;
+      background: #fff;
+    }
+
+    .connexion h2 {
+      margin: 0 0 8px;
+      font: 500 2rem Georgia, serif;
+    }
+
+    .connexion p { color: #666; }
+
+    label {
+      display: block;
+      margin: 18px 0 6px;
       font-size: .85rem;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d5d5d8;
+      border-radius: 10px;
+      color: #151518;
+      background: #fff;
+      font: inherit;
+    }
+
+    input:focus {
+      outline: 2px solid #ed1c24;
+      border-color: #ed1c24;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: #ed1c24;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover { background: #bd1118; }
+
+    .erreur {
+      min-height: 24px;
+      margin: 12px 0 0;
+      color: #bd1118;
+      font-size: .9rem;
+    }
+
+    .avertissement {
+      margin-top: 20px;
+      color: #777;
+      font-size: .75rem;
+    }
+
+    .tableau { display: none; }
+
+    .tableau h2 {
+      font: 500 2rem Georgia, serif;
+    }
+
+    .succes {
+      padding: 14px;
+      border-radius: 12px;
+      color: #176b38;
+      background: #e8f6ec;
+    }
+
+    .droits {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .droit {
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+    }
+
+    .droit strong { display: block; }
+    .droit span { color: #666; font-size: .85rem; }
+
+    .deconnexion {
+      margin-top: 10px;
+      color: #bd1118;
+      background: transparent;
+      border: 1px solid #ed1c24;
+    }
+
+    .deconnexion:hover {
+      color: #fff;
+      background: #bd1118;
     }
 
     @media (max-width: 700px) {
-      .liens { gap: 10px; font-size: .78rem; }
-      .hero { grid-template-columns: 1fr; padding: 50px 0; }
-      .illustration { min-height: 230px; }
-      .grille { grid-template-columns: 1fr; }
-      .equipe { grid-template-columns: 1fr; }
+      .page { grid-template-columns: 1fr; }
+      .presentation, .connexion { padding: 30px; }
+      .badge { margin-top: 35px; }
     }
   </style>
 </head>
 
 <body>
-  <header class="conteneur">
-    <nav>
-      <a class="logo" href="#accueil">Projet 06.02</a>
-      <div class="liens">
-        <a href="#projet">Le projet</a>
-        <a href="#cahier">Cahier des charges</a>
-        <a href="#equipe">L’équipe</a>
-      </div>
-    </nav>
-  </header>
+  <main class="page">
+    <section class="presentation">
+      <a class="retour" href="index.html">← Retour au projet</a>
 
-  <main>
-    <section class="hero conteneur" id="accueil">
-      <div>
-        <div class="etiquette">Projet d’ingénierie · 2026–2027</div>
-        <h1>La bonne dose,<br><em>au bon moment.</em></h1>
-        <p class="intro">
-          Nous travaillons à la conception d’un système de dosage de liquides.
-          Ce site présente le projet et son cahier des charges, que nous
-          compléterons au fil de notre travail.
-        </p>
-        <a class="bouton" href="#projet">Découvrir le projet ↓</a>
-        <a class="bouton clair" href="#cahier">Voir les étapes</a>
-      </div>
-      <div class="illustration" aria-label="Illustration provisoire d’une goutte d’eau">
-        💧
+      <div class="badge">Projet 06.02 · Espace projet</div>
+      <h1>Bienvenue<br>dans l’équipe.</h1>
+
+      <p class="description">
+        Connecte-toi pour accéder à ton espace et aux outils correspondant
+        à ton grade.
+      </p>
+
+      <div class="grades">
+        <div class="grade"><strong>Client</strong> · consultation</div>
+        <div class="grade"><strong>VIP</strong> · client + accès supplémentaire</div>
+        <div class="grade"><strong>Technicien</strong> · VIP + outils techniques</div>
+        <div class="grade"><strong>Admin</strong> · technicien + gestion</div>
+        <div class="grade dev"><strong>Développeur</strong> · accès à tout</div>
       </div>
     </section>
 
-    <section id="projet">
-      <div class="conteneur">
-        <div class="etiquette">01 · Présentation</div>
-        <h2 class="titre-section">Un besoin concret, une solution à construire.</h2>
-        <p class="texte-secondaire">
-          Notre projet consiste à étudier, concevoir et tester un système capable
-          de distribuer une quantité de liquide définie. Les performances
-          attendues et les contraintes seront précisées dans le cahier des charges.
-        </p>
-        <div class="objectif">
-          Objectif : réaliser un système de dosage simple, compréhensible et
-          adapté au besoin du projet.
+    <section class="connexion">
+      <div id="formulaire">
+        <h2>Connexion</h2>
+        <p>Entre tes identifiants pour continuer.</p>
+
+        <form id="form-connexion">
+          <label for="identifiant">Identifiant</label>
+          <input
+            id="identifiant"
+            name="identifiant"
+            autocomplete="username"
+            required
+          >
+
+          <label for="mot-de-passe">Mot de passe</label>
+          <input
+            id="mot-de-passe"
+            name="mot-de-passe"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button type="submit">Se connecter</button>
+          <div class="erreur" id="erreur" aria-live="polite"></div>
+        </form>
+
+        <div class="avertissement">
+          Démonstration uniquement : les identifiants sont visibles dans le
+          code du site. N’utilise pas de vrai mot de passe ici.
         </div>
       </div>
-    </section>
 
-    <section id="cahier">
-      <div class="conteneur">
-        <div class="etiquette">02 · Cahier des charges</div>
-        <h2 class="titre-section">Les premières bases du projet.</h2>
-        <div class="grille">
-          <article class="carte">
-            <div class="numero">01 — TÂCHES À FAIRE</div>
-            <h3>Organiser le travail</h3>
-            <p>Définir le besoin, étudier des solutions, concevoir le système,
-              le réaliser puis vérifier son fonctionnement.</p>
-          </article>
-          <article class="carte">
-            <div class="numero">02 — IDÉES</div>
-            <h3>Comparer les pistes</h3>
-            <p>Rassembler les idées de l’équipe et comparer leur simplicité,
-              leur coût et leur capacité à répondre au besoin.</p>
-          </article>
-          <article class="carte">
-            <div class="numero">03 — COMPOSANTS</div>
-            <h3>Faire les bons choix</h3>
-            <p>La liste des composants sera établie après l’étude des solutions
-              et la définition des performances attendues.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <div class="tableau" id="tableau">
+        <div class="succes">Connexion réussie · Grade Développeur</div>
+        <h2>Ton espace</h2>
+        <p>Ton grade cumule les droits des grades précédents.</p>
 
-    <section>
-      <div class="conteneur">
-        <div class="etiquette">03 · Organisation et suivi</div>
-        <h2 class="titre-section">Avancer étape par étape.</h2>
-        <div class="grille">
-          <article class="carte"><h3>Comprendre</h3><p>Définir le besoin et les contraintes.</p></article>
-          <article class="carte"><h3>Concevoir</h3><p>Étudier les solutions et choisir une approche.</p></article>
-          <article class="carte"><h3>Tester</h3><p>Réaliser des essais et améliorer le système.</p></article>
-        </div>
-      </div>
-    </section>
+        <div class="droits">
+          <div class="droit">
+            <strong>Client</strong>
+            <span>Consulter les informations du projet.</span>
+          </div>
 
-    <section id="equipe">
-      <div class="conteneur">
-        <div class="etiquette">04 · L’équipe</div>
-        <h2 class="titre-section">Cinq étudiants, un projet commun.</h2>
-        <p class="texte-secondaire">UniLaSalle Amiens · Nom du professeur à compléter.</p>
-        <div class="equipe">
-          <div class="membre"><strong>Membre 1</strong>Nom à compléter</div>
-          <div class="membre"><strong>Membre 2</strong>Nom à compléter</div>
-          <div class="membre"><strong>Membre 3</strong>Nom à compléter</div>
-          <div class="membre"><strong>Membre 4</strong>Nom à compléter</div>
-          <div class="membre"><strong>Membre 5</strong>Nom à compléter</div>
+          <div class="droit">
+            <strong>VIP</strong>
+            <span>Accéder aux informations supplémentaires.</span>
+          </div>
+
+          <div class="droit">
+            <strong>Technicien</strong>
+            <span>Accéder aux outils techniques.</span>
+          </div>
+
+          <div class="droit">
+            <strong>Admin</strong>
+            <span>Gérer les éléments de l’espace.</span>
+          </div>
+
+          <div class="droit">
+            <strong>Développeur</strong>
+            <span>Accès complet à toutes les fonctions.</span>
+          </div>
         </div>
+
+        <button class="deconnexion" id="bouton-deconnexion">
+          Se déconnecter
+        </button>
       </div>
     </section>
   </main>
 
-  <footer class="conteneur">
-    Projet 06.02 — Système de dosage de liquides · Site de présentation du projet
-  </footer>
+  <script>
+    const formulaire = document.querySelector("#form-connexion");
+    const zoneErreur = document.querySelector("#erreur");
+
+    formulaire.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const identifiant =
+        document.querySelector("#identifiant").value.trim();
+      const motDePasse =
+        document.querySelector("#mot-de-passe").value;
+
+      if (identifiant === "dev" && motDePasse === "1212") {
+        document.querySelector("#formulaire").style.display = "none";
+        document.querySelector("#tableau").style.display = "block";
+      } else {
+        zoneErreur.textContent =
+          "Identifiant ou mot de passe incorrect.";
+      }
+    });
+
+    document
+      .querySelector("#bouton-deconnexion")
+      .addEventListener("click", function () {
+        document.querySelector("#tableau").style.display = "none";
+        document.querySelector("#formulaire").style.display = "block";
+        formulaire.reset();
+        zoneErreur.textContent = "";
+      });
+  </script>
 </body>
 </html>
