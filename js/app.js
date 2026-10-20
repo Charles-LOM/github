@@ -363,4 +363,4 @@ document.addEventListener("DOMContentLoaded", function () {
   setupAnnouncements();
   setupStatistics();
   setupLogs();
-});.
+});
