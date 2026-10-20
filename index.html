@@ -1,11 +1,239 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, world!</title>
+  <meta name="description" content="Projet d’ingénierie : système de dosage de liquides">
+  <title>Projet 06.02 — Dosage de liquides</title>
+  <style>
+    :root {
+      --fond: #f5f4ef;
+      --blanc: #fffefa;
+      --texte: #172b3a;
+      --secondaire: #60717a;
+      --bleu: #176b72;
+      --vert: #d7ec79;
+      --ligne: #d9dfd9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--fond);
+      color: var(--texte);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .conteneur { width: min(1100px, calc(100% - 40px)); margin: auto; }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--ligne);
+    }
+    .logo { font-weight: 800; text-decoration: none; }
+    .liens { display: flex; gap: 22px; font-size: .9rem; }
+    .liens a { color: var(--secondaire); text-decoration: none; }
+    .liens a:hover { color: var(--bleu); }
+
+    .hero {
+      padding: 76px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .etiquette {
+      color: var(--bleu);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 16px 0;
+      font: 500 clamp(3rem, 7vw, 5.5rem)/.98 var(--serif);
+      letter-spacing: -.05em;
+    }
+    h1 em { color: var(--bleu); font-weight: 400; }
+    .intro { max-width: 530px; color: var(--secondaire); font-size: 1.08rem; }
+    .bouton {
+      display: inline-block;
+      margin: 12px 8px 0 0;
+      padding: 12px 18px;
+      border-radius: 30px;
+      background: var(--bleu);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .bouton.clair { border: 1px solid var(--ligne); background: transparent; color: var(--texte); }
+    .illustration {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      border-radius: 26px;
+      background: #dce9df;
+      color: var(--bleu);
+      font-size: 6rem;
+    }
+    .illustration span { font-size: 1rem; }
+
+    section { padding: 65px 0; border-top: 1px solid var(--ligne); }
+    .titre-section {
+      max-width: 680px;
+      margin-bottom: 28px;
+      font: 500 clamp(2rem, 4vw, 3.4rem)/1.08 var(--serif);
+      letter-spacing: -.04em;
+    }
+    .texte-secondaire { color: var(--secondaire); }
+    .grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .carte {
+      padding: 24px;
+      border: 1px solid var(--ligne);
+      border-radius: 18px;
+      background: var(--blanc);
+    }
+    .numero { color: var(--bleu); font-size: .8rem; font-weight: 800; }
+    .carte h3 { margin: 12px 0 8px; font: 500 1.6rem var(--serif); }
+    .carte p { margin-bottom: 0; color: var(--secondaire); }
+
+    .objectif {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--bleu);
+      color: white;
+      font: 500 clamp(1.5rem, 3vw, 2.2rem)/1.35 var(--serif);
+    }
+    .equipe { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; }
+    .membre { padding: 13px 0; border-bottom: 1px solid var(--ligne); }
+    .membre strong { display: block; }
+
+    footer {
+      padding: 25px 0 35px;
+      color: var(--secondaire);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 700px) {
+      .liens { gap: 10px; font-size: .78rem; }
+      .hero { grid-template-columns: 1fr; padding: 50px 0; }
+      .illustration { min-height: 230px; }
+      .grille { grid-template-columns: 1fr; }
+      .equipe { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello, world!</h1>
+  <header class="conteneur">
+    <nav>
+      <a class="logo" href="#accueil">Projet 06.02</a>
+      <div class="liens">
+        <a href="#projet">Le projet</a>
+        <a href="#cahier">Cahier des charges</a>
+        <a href="#equipe">L’équipe</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero conteneur" id="accueil">
+      <div>
+        <div class="etiquette">Projet d’ingénierie · 2026–2027</div>
+        <h1>La bonne dose,<br><em>au bon moment.</em></h1>
+        <p class="intro">
+          Nous travaillons à la conception d’un système de dosage de liquides.
+          Ce site présente le projet et son cahier des charges, que nous
+          compléterons au fil de notre travail.
+        </p>
+        <a class="bouton" href="#projet">Découvrir le projet ↓</a>
+        <a class="bouton clair" href="#cahier">Voir les étapes</a>
+      </div>
+      <div class="illustration" aria-label="Illustration provisoire d’une goutte d’eau">
+        💧
+      </div>
+    </section>
+
+    <section id="projet">
+      <div class="conteneur">
+        <div class="etiquette">01 · Présentation</div>
+        <h2 class="titre-section">Un besoin concret, une solution à construire.</h2>
+        <p class="texte-secondaire">
+          Notre projet consiste à étudier, concevoir et tester un système capable
+          de distribuer une quantité de liquide définie. Les performances
+          attendues et les contraintes seront précisées dans le cahier des charges.
+        </p>
+        <div class="objectif">
+          Objectif : réaliser un système de dosage simple, compréhensible et
+          adapté au besoin du projet.
+        </div>
+      </div>
+    </section>
+
+    <section id="cahier">
+      <div class="conteneur">
+        <div class="etiquette">02 · Cahier des charges</div>
+        <h2 class="titre-section">Les premières bases du projet.</h2>
+        <div class="grille">
+          <article class="carte">
+            <div class="numero">01 — TÂCHES À FAIRE</div>
+            <h3>Organiser le travail</h3>
+            <p>Définir le besoin, étudier des solutions, concevoir le système,
+              le réaliser puis vérifier son fonctionnement.</p>
+          </article>
+          <article class="carte">
+            <div class="numero">02 — IDÉES</div>
+            <h3>Comparer les pistes</h3>
+            <p>Rassembler les idées de l’équipe et comparer leur simplicité,
+              leur coût et leur capacité à répondre au besoin.</p>
+          </article>
+          <article class="carte">
+            <div class="numero">03 — COMPOSANTS</div>
+            <h3>Faire les bons choix</h3>
+            <p>La liste des composants sera établie après l’étude des solutions
+              et la définition des performances attendues.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="etiquette">03 · Organisation et suivi</div>
+        <h2 class="titre-section">Avancer étape par étape.</h2>
+        <div class="grille">
+          <article class="carte"><h3>Comprendre</h3><p>Définir le besoin et les contraintes.</p></article>
+          <article class="carte"><h3>Concevoir</h3><p>Étudier les solutions et choisir une approche.</p></article>
+          <article class="carte"><h3>Tester</h3><p>Réaliser des essais et améliorer le système.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipe">
+      <div class="conteneur">
+        <div class="etiquette">04 · L’équipe</div>
+        <h2 class="titre-section">Cinq étudiants, un projet commun.</h2>
+        <p class="texte-secondaire">UniLaSalle Amiens · Nom du professeur à compléter.</p>
+        <div class="equipe">
+          <div class="membre"><strong>Membre 1</strong>Nom à compléter</div>
+          <div class="membre"><strong>Membre 2</strong>Nom à compléter</div>
+          <div class="membre"><strong>Membre 3</strong>Nom à compléter</div>
+          <div class="membre"><strong>Membre 4</strong>Nom à compléter</div>
+          <div class="membre"><strong>Membre 5</strong>Nom à compléter</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="conteneur">
+    Projet 06.02 — Système de dosage de liquides · Site de présentation du projet
+  </footer>
 </body>
 </html>
