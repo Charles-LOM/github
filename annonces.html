@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annonces — Projet 06.02</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body data-role="admin" data-page="announcements">
+  <header>
+    <a class="logo" href="index.html">Projet 06.02</a>
+    <span class="user-label" id="user-label"></span>
+    <a class="logout-link" href="#" id="logout-link">Déconnexion</a>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Mon espace</h2>
+      <nav id="sidebar-nav"></nav>
+    </aside>
+
+    <main class="app-content">
+      <h1 class="page-title">Gérer les annonces</h1>
+      <p class="muted">Les annonces publiées apparaîtront sur la page d’accueil.</p>
+
+      <form id="announcement-form" class="form">
+        <label for="announcement-title">Titre</label>
+        <input id="announcement-title" required>
+
+        <label for="announcement-text">Annonce</label>
+        <textarea id="announcement-text" required></textarea>
+
+        <button type="submit">Publier l’annonce</button>
+      </form>
+
+      <h2>Annonces publiées</h2>
+      <div id="announcement-list" class="list"></div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journaux des actions — Projet 06.02</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body data-role="dev" data-page="logs">
+  <header>
+    <a class="logo" href="index.html">Projet 06.02</a>
+    <span class="user-label" id="user-label"></span>
+    <a class="logout-link" href="#" id="logout-link">Déconnexion</a>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Mon espace</h2>
+      <nav id="sidebar-nav"></nav>
+    </aside>
+
+    <main class="app-content">
+      <h1 class="page-title">Journaux des actions</h1>
+      <p class="muted">Historique des actions de démonstration sur ce navigateur.</p>
+      <div id="log-list" class="list"></div>
+    </main>
+  </div>
+</body>
+</html>

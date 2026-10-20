@@ -5,78 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projet 06.02 — Dosage de liquides</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 
 <body>
   <header>
-    <a class="bouton-connexion" href="connexion.html">Connexion</a>
-    <strong class="logo">Projet 06.02</strong>
+    <a class="login-button" href="connexion.html">Connexion</a>
+    <a class="logo" href="index.html">Projet 06.02</a>
 
-    <nav>
+    <nav class="header-links">
       <a href="#projet">Le projet</a>
-      <a href="#cahier">Cahier des charges</a>
-      <a href="#equipe">L’équipe</a>
+      <a href="#annonces">Annonces</a>
+      <a href="connexion.html">Espace projet</a>
     </nav>
   </header>
 
-  <main>
-    <section class="accueil">
-      <p class="etiquette">Projet d’ingénierie · 2026–2027</p>
+  <main class="home container">
+    <section class="hero" id="projet">
+      <p class="red">Projet d’ingénierie · 2026–2027</p>
       <h1>Système de dosage<br><span>de liquides</span></h1>
       <p>
         Nous sommes cinq étudiants et nous travaillons à la conception
         d’un système de dosage de liquides.
       </p>
-      <a class="bouton" href="#projet">Découvrir le projet</a>
+      <a class="button" href="connexion.html">Accéder à l’espace projet</a>
     </section>
 
-    <section id="projet">
+    <section class="section">
       <h2>Le projet</h2>
-      <p>
-        L’objectif est d’étudier, de concevoir et de tester un système
-        capable de distribuer une quantité de liquide définie.
+      <p class="muted">
+        L’objectif est d’étudier, de concevoir et de tester un système capable
+        de distribuer une quantité de liquide définie. Les choix techniques
+        seront précisés au fur et à mesure du projet.
       </p>
       <p class="note">
-        Les besoins précis et les performances attendues restent à définir.
+        Projet mené par cinq étudiants à UniLaSalle Amiens.
       </p>
     </section>
 
-    <section id="cahier">
-      <h2>Cahier des charges</h2>
-
-      <div class="cartes">
-        <article class="carte">
-          <h3>1. Tâches à faire</h3>
-          <p>Définir le besoin, étudier des solutions, réaliser le système et le tester.</p>
-        </article>
-
-        <article class="carte">
-          <h3>2. Idées</h3>
-          <p>Rassembler les idées du groupe et comparer les solutions possibles.</p>
-          <span>À compléter</span>
-        </article>
-
-        <article class="carte">
-          <h3>3. Composants</h3>
-          <p>Choisir les composants après avoir défini les besoins du système.</p>
-          <span>À définir</span>
-        </article>
-
-        <article class="carte">
-          <h3>4. Organisation</h3>
-          <p>Répartir les tâches et suivre l’avancement du projet en équipe.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="equipe">
-      <h2>L’équipe</h2>
-      <p>Groupe de cinq étudiants — UniLaSalle Amiens.</p>
-      <p>Noms des membres et du professeur : à compléter.</p>
+    <section class="section" id="annonces">
+      <h2>Dernières annonces</h2>
+      <p class="muted">Les annonces publiées par l’administration apparaîtront ici.</p>
+      <div id="annonces-accueil" class="list"></div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     Projet 06.02 — Système de dosage de liquides
   </footer>
 </body>

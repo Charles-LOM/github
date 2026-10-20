@@ -5,40 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Connexion — Projet 06.02</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 
-<body class="page-connexion">
-  <main class="boite-connexion">
-    <a href="index.html">← Retour au projet</a>
+<body class="login-page">
+  <main class="login-box">
+    <a class="back-link" href="index.html">← Retour à l’accueil</a>
 
-    <div id="formulaire">
-      <h1>Connexion</h1>
-      <p>Entre tes identifiants pour continuer.</p>
+    <h1>Connexion</h1>
+    <p class="muted">Connecte-toi pour ouvrir ton espace projet.</p>
 
-      <form id="form-connexion">
-        <label for="identifiant">Identifiant</label>
-        <input id="identifiant" type="text" required>
+    <form id="login-form" class="form">
+      <label for="username">Identifiant</label>
+      <input id="username" required autocomplete="username">
 
-        <label for="mot-de-passe">Mot de passe</label>
-        <input id="mot-de-passe" type="password" required>
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" required autocomplete="current-password">
 
-        <button type="submit">Se connecter</button>
-        <p id="erreur"></p>
-      </form>
+      <button type="submit">Se connecter</button>
+      <div id="login-error" class="error" aria-live="polite"></div>
+    </form>
 
-      <p class="note">
-        Grades cumulés : Client, VIP, Technicien, Admin et Développeur.
-        Le Développeur a accès à tout.
-      </p>
+    <div class="roles">
+      <div class="role"><strong>Client</strong> : créer un verre</div>
+      <div class="role"><strong>VIP</strong> : droits Client + enregistrer des verres</div>
+      <div class="role"><strong>Technicien</strong> : droits VIP + gérer les boissons</div>
+      <div class="role"><strong>Administrateur</strong> : droits Technicien + statistiques et annonces</div>
+      <div class="role"><strong>Développeur</strong> : tous les droits + journaux des actions</div>
     </div>
 
-    <div id="espace" class="cache">
-      <h1>Bienvenue, développeur !</h1>
-      <p>Tu as accès à tous les grades et à toutes les fonctions.</p>
-      <button id="deconnexion" type="button">Se déconnecter</button>
-    </div>
+    <p class="demo-warning">
+      Démonstration uniquement : les identifiants sont visibles dans le code
+      d’un site public et ne protègent pas réellement les données.
+    </p>
   </main>
-
-  <script src="js/connexion.js"></script>
 </body>
 </html>

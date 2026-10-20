@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Créer un verre — Projet 06.02</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body data-role="client" data-page="create-glass">
+  <header>
+    <a class="logo" href="index.html">Projet 06.02</a>
+    <span class="user-label" id="user-label"></span>
+    <a class="logout-link" href="#" id="logout-link">Déconnexion</a>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Mon espace</h2>
+      <nav id="sidebar-nav"></nav>
+    </aside>
+
+    <main class="app-content">
+      <h1 class="page-title">Créer un verre</h1>
+      <p class="muted">Ajoute une demande de dosage.</p>
+
+      <form id="glass-form" class="form">
+        <label for="glass-name">Nom de la boisson</label>
+        <input id="glass-name" required>
+
+        <label for="glass-volume">Volume souhaité (en ml)</label>
+        <input id="glass-volume" type="number" min="1" required>
+
+        <button type="submit">Créer la demande</button>
+      </form>
+
+      <h2>Demandes récentes</h2>
+      <div id="glass-list" class="list"></div>
+    </main>
+  </div>
+</body>
+</html>

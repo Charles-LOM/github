@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistiques — Projet 06.02</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body data-role="admin" data-page="stats">
+  <header>
+    <a class="logo" href="index.html">Projet 06.02</a>
+    <span class="user-label" id="user-label"></span>
+    <a class="logout-link" href="#" id="logout-link">Déconnexion</a>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Mon espace</h2>
+      <nav id="sidebar-nav"></nav>
+    </aside>
+
+    <main class="app-content">
+      <h1 class="page-title">Statistiques</h1>
+      <p class="muted">Résumé des actions enregistrées dans ce navigateur.</p>
+
+      <div class="stats">
+        <div class="stat-card"><strong id="stat-glasses">0</strong><span>Verres créés</span></div>
+        <div class="stat-card"><strong id="stat-saved">0</strong><span>Verres enregistrés</span></div>
+        <div class="stat-card"><strong id="stat-drinks">0</strong><span>Boissons ajoutées</span></div>
+        <div class="stat-card"><strong id="stat-announcements">0</strong><span>Annonces publiées</span></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
