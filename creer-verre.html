@@ -23,14 +23,67 @@
 
     <main class="app-content">
       <h1 class="page-title">Créer un verre</h1>
-      <p class="muted">Ajoute une demande de dosage.</p>
+      <p class="muted">Choisis la taille du verre et règle les six gouttes ainsi que l’eau. La composition reste toujours à 100 %.</p>
 
       <form id="glass-form" class="form">
         <label for="glass-name">Nom de la boisson</label>
         <input id="glass-name" required>
 
-        <label for="glass-volume">Volume souhaité (en ml)</label>
-        <input id="glass-volume" type="number" min="1" required>
+        <label for="glass-volume">Taille du verre (en ml)</label>
+        <input id="glass-volume" type="number" min="100" max="1000" step="25" value="250" required>
+
+        <fieldset class="mix-fieldset">
+          <legend>Composition du verre</legend>
+          <p class="muted">Quand tu modifies une goutte, les autres proportions s’ajustent pour garder un total de 100 %.</p>
+
+          <div class="mix-slider">
+            <label for="mix-goutte1">Goutte 1</label>
+            <input id="mix-goutte1" data-ingredient="goutte1" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte1">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-goutte2">Goutte 2</label>
+            <input id="mix-goutte2" data-ingredient="goutte2" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte2">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-goutte3">Goutte 3</label>
+            <input id="mix-goutte3" data-ingredient="goutte3" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte3">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-goutte4">Goutte 4</label>
+            <input id="mix-goutte4" data-ingredient="goutte4" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte4">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-goutte5">Goutte 5</label>
+            <input id="mix-goutte5" data-ingredient="goutte5" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte5">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-goutte6">Goutte 6</label>
+            <input id="mix-goutte6" data-ingredient="goutte6" type="range" min="0" max="100" value="0">
+            <output id="amount-goutte6">0 % · 0 ml</output>
+          </div>
+
+          <div class="mix-slider">
+            <label for="mix-eau">Eau</label>
+            <input id="mix-eau" data-ingredient="eau" type="range" min="0" max="100" value="100">
+            <output id="amount-eau">100 % · 250 ml</output>
+          </div>
+        </fieldset>
+
+        <section class="mix-preview-panel" aria-label="Aperçu du verre">
+          <h2>Aperçu du verre</h2>
+          <div id="glass-preview" class="glass-cup" role="img" aria-label="Verre rempli à 100 pour cent"></div>
+          <p id="mix-total" class="mix-total">Total : 100 % · 250 ml</p>
+        </section>
 
         <button type="submit">Créer la demande</button>
       </form>

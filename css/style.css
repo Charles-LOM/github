@@ -411,3 +411,167 @@ textarea {
     flex-direction: column;
   }
 }
+
+/* Création et aperçu d’un verre */
+
+.mix-fieldset {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.mix-fieldset legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.mix-fieldset > .muted {
+  margin: 0 0 6px;
+}
+
+.mix-slider {
+  display: grid;
+  grid-template-columns: 90px minmax(100px, 1fr) 100px;
+  gap: 12px;
+  align-items: center;
+}
+
+.mix-slider label {
+  font-size: .9rem;
+}
+
+.mix-slider input[type="range"] {
+  padding: 0;
+  accent-color: var(--red);
+}
+
+.mix-slider output {
+  color: var(--muted);
+  font-size: .82rem;
+  text-align: right;
+}
+
+.mix-preview-panel {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.mix-preview-panel h2 {
+  justify-self: start;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.glass-cup {
+  width: 150px;
+  height: 230px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  border: 4px solid #b9c6c6;
+  border-top: 0;
+  border-radius: 8px 8px 30px 30px;
+  background: #fff;
+}
+
+.glass-segment {
+  flex: 0 0 auto;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  font-size: .72rem;
+  font-weight: bold;
+  text-shadow: 0 1px 3px #000;
+  transition: height .15s ease;
+}
+
+.mix-total {
+  margin: 0;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* Suggestions et gestion des comptes */
+
+.chef-suggestions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.chef-suggestion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--surface), #281819);
+}
+
+.chef-suggestion h2,
+.chef-suggestion p {
+  margin: 0;
+}
+
+.chef-suggestion .button {
+  margin-top: auto;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.accounts-table {
+  min-width: 760px;
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+.accounts-table th,
+.accounts-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.accounts-table th {
+  color: #ff555b;
+}
+
+.accounts-table select {
+  min-width: 155px;
+}
+
+.account-warning {
+  margin: 18px 0;
+}
+
+@media (max-width: 760px) {
+  .mix-slider {
+    grid-template-columns: 72px minmax(80px, 1fr);
+    gap: 8px;
+  }
+
+  .mix-slider output {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .chef-suggestions {
+    grid-template-columns: 1fr;
+  }
+}
